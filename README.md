@@ -1,16 +1,16 @@
 #### Directory Structure
 
 ```    .
-    ├── config                  # Compiled files (alternatively `dist`)
-    ├── docker                   # Documentation files (alternatively `doc`)
-    ├── public                # Source files (alternatively `lib` or `app`)
+    ├── config                  # Routes та DI конфігурація
+    ├── docker                  # Конфігурації для Docker-контейнерів
+    ├── public                  # index.php - Front-controller, стартова сторінка
     ├── src
-       ├── Controllers
-       ├── Handlers
-       ├── Models 
-       ├── Services                      #      Automated tests (alternatively `spec` or `tests`)
+       ├── Controllers          # Контролери, прийом request та видача response
+       ├── Handlers             # Обробка Response, JSON 
+       ├── Models               # Repository та Модель для Email (emai.txt) 
+       ├── Services             # Обробка даних, Api, Sender
     ├── storage                   # Tools and utilities
   
 ```
 
-№№
+Api - https://www.coingecko.com/

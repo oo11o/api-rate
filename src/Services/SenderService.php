@@ -3,7 +3,6 @@
 namespace App\Services;
 
 use Psr\Http\Message\ResponseInterface as Response;
-
 use App\Handlers\ResponseHandler;
 use App\Models\EmailRepository;
 use App\Services\Api\Api;
@@ -21,8 +20,7 @@ class SenderService
         EmailSender $emailSender,
         EmailRepository $emailRepository,
         Api $apiRate
-    )
-    {
+    ) {
         $this->responseHandler = $responseHandler;
         $this->emailSender = $emailSender;
         $this->emailRepository = $emailRepository;
@@ -34,13 +32,14 @@ class SenderService
         $subscribers = $this->emailRepository->getAllEmail();
         $rate = $this->apiRate->getRate();
         foreach ($subscribers as $email) {
-           $this->emailSender->send($email, 'New bitcoin exchange rate', $rate);
+            $this->emailSender->send($email, 'New bitcoin exchange rate', $rate);
         }
         return $this->responseHandler->jsonResponse(
             [
                 'message'=>'E-mails sent',
                 'rate' => $rate,
                 'countSubscriber' => count($subscribers)
-            ]);
+            ]
+        );
     }
 }

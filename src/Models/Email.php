@@ -8,7 +8,8 @@ use Exception;
 class Email implements EmailInterface
 {
     private $filename;
-    public function __construct($filename = null) {
+    public function __construct($filename = null)
+    {
         $this->filename = $filename ?? __DIR__ . '/../../storage/email.txt';
     }
 

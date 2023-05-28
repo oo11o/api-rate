@@ -16,13 +16,14 @@ class CoinGeckoApi implements ApiInterface
         $this->apiUrl = $apiUrl;
     }
 
-    public function getRate(string $coin = 'bitcoin', string $currency='uah'): int
+    public function getRate(string $coin = 'bitcoin', string $currency = 'uah'): int
     {
         $urlRequestApi = $this->createUrlRequest(
             [
                 'ids' => $coin,
                 'vs_currencies'=> $currency
-            ]);
+            ]
+        );
 
         $response = $this->httpClient->request('GET', $urlRequestApi);
 
@@ -30,7 +31,7 @@ class CoinGeckoApi implements ApiInterface
             throw new Exception("There was an error Api Resolve");
         }
 
-        return json_decode($response->getBody()->getContents(), TRUE)[$coin][$currency];
+        return json_decode($response->getBody()->getContents(), true)[$coin][$currency];
     }
 
     private function createUrlRequest(array $arguments): string

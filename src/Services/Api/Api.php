@@ -16,6 +16,6 @@ class Api
 
     public function getRate()
     {
-       return $this->api->getRate();
+        return $this->api->getRate();
     }
 }

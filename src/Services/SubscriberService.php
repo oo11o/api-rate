@@ -3,7 +3,6 @@
 namespace App\Services;
 
 use App\Handlers\ResponseHandler;
-
 use App\Models\EmailRepository;
 use Respect\Validation\Validator as Validator;
 
@@ -25,7 +24,7 @@ class SubscriberService
             return  $this->responseHandler->jsonResponse(['message' => "Email is required"], 400);
         }
         if (!$emailValidator->validate($email)) {
-           return  $this->responseHandler->jsonResponse(['message' => "Email is failed"], 400);
+            return  $this->responseHandler->jsonResponse(['message' => "Email is failed"], 400);
         }
 
         return $this->emailRepository->addEmail($email)

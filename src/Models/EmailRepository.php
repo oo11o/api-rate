@@ -11,8 +11,8 @@ class EmailRepository
     }
     public function addEmail($email)
     {
-        if($this->email->isEmailExists($email)) {
-           return false;
+        if ($this->email->isEmailExists($email)) {
+            return false;
         }
         return $this->email->add($email);
     }

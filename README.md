@@ -1,13 +1,16 @@
 #### Directory Structure
 
 ```    .
-    ├── build                   # Compiled files (alternatively `dist`)
-    ├── docs                    # Documentation files (alternatively `doc`)
-    ├── services                # Source files (alternatively `lib` or `app`)
-    ├── test                    # Automated tests (alternatively `spec` or `tests`)
-    ├── tools                   # Tools and utilities
-    ├── LICENSE
-    └── README.md
+    ├── config                  # Compiled files (alternatively `dist`)
+    ├── docker                   # Documentation files (alternatively `doc`)
+    ├── public                # Source files (alternatively `lib` or `app`)
+    ├── src
+       ├── Controllers
+       ├── Handlers
+       ├── Models 
+       ├── Services                      #      Automated tests (alternatively `spec` or `tests`)
+    ├── storage                   # Tools and utilities
+  
 ```
 
 №№
